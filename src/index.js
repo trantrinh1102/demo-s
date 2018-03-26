@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import { createBrowserHistory } from 'history';
+import history from './history';
 import { Router } from 'react-router-dom';
 
 import './index.css';
@@ -32,8 +32,6 @@ const store = createStore(
 
 // Begin our Index Saga
 sagaMiddleware.run(IndexSagas);
-
-const history = createBrowserHistory();
 
 ReactDOM.render(
   <Provider store={store}>

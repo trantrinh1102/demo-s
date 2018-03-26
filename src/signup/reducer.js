@@ -11,19 +11,20 @@ export default (state = initialState, action) => {
   switch (action.type) {
     case SIGNUP_REQUESTING:
       return Object.assign({}, state,
-        { requesting: true, 
+        { requesting: true,
           messages: [{ body: 'Signing up...', time: new Date() }],
-          errors: [],          
+          errors: [],
         });
-    case SIGNUP_SUCCESS:
+    case SIGNUP_SUCCESS: {
       return Object.assign({}, state, {
         messages: [{
-          body: `Successfully created account for ${action.response.email}`,
+          body: `Successfully created account for ${action.respone.email}`,
           time: new Date(),
         }],
         requesting: false,
         successful: true,
-      });    
+      });
+    }
     case SIGNUP_ERROR:
       return Object.assign({}, state, {
         errors: state.errors.concat([{
@@ -38,4 +39,3 @@ export default (state = initialState, action) => {
       return state;
   }
 };
-

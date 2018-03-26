@@ -30,8 +30,9 @@ function signupApi (email, password) {
 function* signupFlow (action) {
   try {
     const { email, password } = action;
-    
+
     const respone = yield call(signupApi, email, password)
+
     yield put({ type: SIGNUP_SUCCESS, respone })
   } catch (error) {
     yield put({ type: SIGNUP_ERROR, error })

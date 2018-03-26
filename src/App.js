@@ -7,6 +7,7 @@ import Signup from './signup';
 import Widgets  from './widgets';
 import Header from './components/Header';
 import Top from './components/Top';
+import PrivateRoute from './helpers/route/PrivateRoute';
 
 const App = props => (
   <div className="App">
@@ -19,10 +20,10 @@ const App = props => (
 
 const Routing = () => (
   <Switch>
-    <Route exact path='/' component={Top} />
+    <Route exact={true} path='/' component={Top} />
     <Route path="/login" component={Login} />
     <Route path="/signup" component={Signup} />
-    <Route path="/widgets" components={Widgets} />
+    <PrivateRoute path="/widgets" components={Widgets} />
     <Redirect to="/" />
   </Switch>
 );

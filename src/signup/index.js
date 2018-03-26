@@ -7,12 +7,18 @@ import { Link } from 'react-router-dom';
 import signupRequest from './actions';
 import Messages from '../notifications/Messages' ;
 import Errors from '../notifications/Errors';
+import history from '../history';
 
 class Signup extends Component {
-  
   constructor(props) {
     super(props);
     this.submit = this.submit.bind(this);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.signup.successful) {
+      history.push("/login");
+    }
   }
 
   submit(values) {

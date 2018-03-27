@@ -1,13 +1,13 @@
 import React from 'react';
 import { Switch, Route, Redirect } from 'react-router-dom';
 
-import './App.css';
-import Login from './login';
-import Signup from './signup';
-import Widgets  from './widgets';
-import Header from './components/Header';
-import Top from './components/Top';
-import PrivateRoute from './helpers/route/PrivateRoute';
+import 'styles/App.css';
+import Login from 'containers/login';
+import Signup from 'containers/signup';
+import Widgets  from 'containers/widgets';
+import Header from 'components/Header';
+import Top from 'components/Top';
+import PrivateRoute from 'helpers/route/PrivateRoute';
 
 const App = props => (
   <div className="App">

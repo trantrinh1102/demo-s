@@ -4,10 +4,9 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 
+import Messages from 'notifications/Messages' ;
+import Errors from 'notifications/Errors';
 import signupRequest from './actions';
-import Messages from '../notifications/Messages' ;
-import Errors from '../notifications/Errors';
-import history from '../history';
 
 class Signup extends Component {
   constructor(props) {
@@ -17,7 +16,7 @@ class Signup extends Component {
 
   componentWillReceiveProps(nextProps) {
     if (nextProps.signup.successful) {
-      history.push("/login");
+      // history.push("/login");
     }
   }
 

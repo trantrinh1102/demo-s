@@ -4,11 +4,10 @@ import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 
-import Messages from '../notifications/Messages';
-import Errors from '../notifications/Errors';
-
+import Messages from 'notifications/Messages';
+import Errors from 'notifications/Errors';
+import history from 'setup/history';
 import loginRequest from './actions';
-import history from '../history';
 
 class Login extends Component {
   constructor(props) {

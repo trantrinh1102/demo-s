@@ -7,9 +7,7 @@ import {
   cancelled //
 } from 'redux-saga/effects';
 
-import { browserHistory } from 'react-router-dom';
-
-import { handleApiErrors } from '../lib/api-errors';
+import { UnauthenticatedRequest } from 'services/api';
 
 // Our login constants
 import {
@@ -22,35 +20,33 @@ import {
 import {
   setClient,
   unsetClient,
-} from '../client/actions';
+} from 'client/actions';
 
 import {
   CLIENT_UNSET, CLIENT_SET,
-} from '../client/constants';
-
-const loginUrl = `${process.env.REACT_APP_API_URL}/api/Clients/login`;
+} from 'client/constants';
 
 function loginApi(email, password) {
-  return fetch(loginUrl, {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-    body: JSON.stringify({ email, password }),
+  return UnauthenticatedRequest().post({
+    url: '/api/Clients/login',
+    data: {
+      email,
+      password,
+    }
   })
-    .then(handleApiErrors)
-    .then(response => response.json())
-    .then(json => json)
-    .catch((error) => { throw error })
+    .then((response) => {
+      return response.data;
+    })
+    .catch((error) => {
+      throw error;
+    })
 }
 
 function* logout() {
   // dispatches the CLIENT_UNSET action
   yield put(unsetClient());
-
   // remove our token
   localStorage.removeItem('token');
-
 }
 
 function* loginFollow (email, password) {

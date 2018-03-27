@@ -3,16 +3,16 @@ import ReactDOM from 'react-dom';
 import { applyMiddleware, createStore, compose } from 'redux';
 import { Provider } from 'react-redux';
 import createSagaMiddleware from 'redux-saga';
-import history from './history';
+import history from 'setup/history';
 import { Router } from 'react-router-dom';
 
-import './index.css';
+import 'styles/index.css';
 import App from './App';
 
 
 // import the index reducer and sagas
-import IndexReducer from './index-reducer';
-import IndexSagas from './index-sagas';
+import IndexReducer from 'setup/index-reducer';
+import IndexSagas from 'setup/index-sagas';
 
 import registerServiceWorker from './registerServiceWorker';
 

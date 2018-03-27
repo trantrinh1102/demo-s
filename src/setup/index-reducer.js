@@ -1,9 +1,9 @@
 import { combineReducers } from 'redux';
 import { reducer as form } from 'redux-form';
 
-import client from './client/reducer';
-import signup from './signup/reducer';
-import login from './login/reducer';
+import client from 'client/reducer';
+import signup from 'containers/signup/reducer';
+import login from 'containers/login/reducer';
 
 const IndexReducer = combineReducers({
   form,

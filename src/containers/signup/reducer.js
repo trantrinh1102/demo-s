@@ -16,9 +16,10 @@ export default (state = initialState, action) => {
           errors: [],
         });
     case SIGNUP_SUCCESS: {
+        debugger
       return Object.assign({}, state, {
         messages: [{
-          body: `Successfully created account for ${action.respone.email}`,
+          body: `Successfully created account for ${action.email}`,
           time: new Date(),
         }],
         requesting: false,

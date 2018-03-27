@@ -1,8 +1,8 @@
 import React from 'react';
 import { Switch, Link, Route } from 'react-router-dom';
 
-import logo from '../logo.svg';
-import Top from './Top';
+import logo from 'images/logo.svg';
+import Top from 'components/Top';
 
 const Header = () => (
   <header className="App-header">

@@ -3,10 +3,12 @@ import { reduxForm, Field } from 'redux-form';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { compose } from 'recompose';
 
 import Messages from 'notifications/Messages';
 import Errors from 'notifications/Errors';
 import history from 'setup/history';
+import translate from 'i18n/Translate';
 import loginRequest from './actions';
 
 class Login extends Component {
@@ -33,7 +35,8 @@ class Login extends Component {
         errors,
         messages,
         successful,
-      }
+      },
+      translate,
     } = this.props
 
     return (
@@ -56,7 +59,7 @@ class Login extends Component {
             className="password"
             component="input"
           />
-          <button action="submit">LOGIN</button>
+          <button action="submit">{translate('user.btn.register')}</button>
         </form>
         <div className="auth-messages">
           {/* As in the signup, we're just using the message and error helpers */}
@@ -84,6 +87,7 @@ Login.propTypes = {
     requesting: PropTypes.bool,
     successful: PropTypes.bool,
   }),
+  translate: PropTypes.func,
 }
 
 const mapStateToProps = state => ({
@@ -94,10 +98,13 @@ const mapDispatchToProps = {
   loginRequest,
 }
 
-const connected = connect(mapStateToProps, mapDispatchToProps)(Login);
-
 const formed = reduxForm({
   form: 'login',
-})(connected);
+})(Login);
 
-export default formed;
+const enhance = compose(
+  translate,
+  connect(mapStateToProps, mapDispatchToProps),
+)
+
+export default enhance(formed);

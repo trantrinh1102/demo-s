@@ -8,6 +8,8 @@ import Header from 'components/Header';
 import indexTitle from 'components/styled-component-demo/index';
 import PrivateRoute from 'helpers/route/PrivateRoute';
 import ShowCheckbox from 'containers/showCheckbox';
+import TranslationProvider from 'i18n/TranslationProvider';
+import translations from 'i18n/language';
 
 const LoadableLogin = Loadable({
   loader: () => import('containers/login'),
@@ -39,15 +41,17 @@ const App = props => (
 );
 
 const Routing = () => (
-  <Switch>
-    <Route exact={true} path='/' component={LoadableTop} />
-    <Route path="/login" component={LoadableLogin} />
-    <Route path="/signup" component={LoadableSignup} />
-    <Route path="/show-checkbox" component={ShowCheckbox} />
-    <Route path="/styled" component={indexTitle} />
-    <PrivateRoute path="/widgets" components={LoadableWidgets} />
-    <Redirect to="/" />
-  </Switch>
+  <TranslationProvider messages={translations}>
+    <Switch>
+      <Route exact={true} path='/' component={LoadableTop} />
+      <Route path="/login" component={LoadableLogin} />
+      <Route path="/signup" component={LoadableSignup} />
+      <Route path="/show-checkbox" component={ShowCheckbox} />
+      <Route path="/styled" component={indexTitle} />
+      <PrivateRoute path="/widgets" components={LoadableWidgets} />
+      <Redirect to="/" />
+    </Switch>
+  </TranslationProvider>
 );
 
 App.propTypes = {

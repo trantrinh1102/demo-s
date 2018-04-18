@@ -7,5 +7,6 @@ export default () => (
     <li><Link to="/signup">Signup</Link></li>
     <li><Link to="/login">Login</Link></li>
     <li><Link to="/widgets">Widgets</Link></li>
+    <li><Link to="/styled">styled</Link></li>
   </ul>
 )

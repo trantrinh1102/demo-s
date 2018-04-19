@@ -22,16 +22,13 @@ const TabButton = styled.button`
   align-items: center;
   justify-content: center;
   font-size: 16px;
-  /* cursor: default; */
+  color: ${props => props.selected ? '#373737' : '#808080'};
+  cursor: default;
   background: transparent;
   outline: none;
   transition: border-color 0.2s ease-in;
   border: none;
-  border-bottom: 4px solid ${props => props.selected ? '#6D6D6D' : '#D8D8D8'};
-
-  &:hover, &:focus, &:active {
-    border-bottom: 1px solid ${props => props.selected ? '#6D6D6D' : '#D8D8D8'};
-  }
+  border-bottom: ${props => props.selected ? '4px' : '1px'} solid #6D6D6D;
 `;
 
 const TabList = styled.div`
@@ -41,7 +38,7 @@ const TabList = styled.div`
 `;
 
 const TabPanel = ({ children }) => (
-  <TabContent role='tabpanel' tabindex='0'>{children}</TabContent>
+  <TabContent tabindex='0'>{children}</TabContent>
 );
 
 TabPanel.propTypes = {
@@ -59,11 +56,6 @@ class Tabs extends Component {
 
   static propTypes = {
     children: PropTypes.any.isRequired,
-    tabBreak: PropTypes.string,
-  };
-
-  static defaultProps = {
-    // tabBreak: '768px',
   };
 
   state = {
@@ -80,12 +72,10 @@ class Tabs extends Component {
 
     return (
       <TabsWrapper>
-        <TabList role='tablist'>
+        <TabList>
           {React.Children.map(children, ({ props: { label } }, index) =>
             <TabButton
-              role='tab'
               selected={selectedTab === index}
-              aria-selected={selectedTab === index ? 'true' : 'false'}
               onClick={() => this.selectTab(index)}
             >
               {label}

@@ -19,7 +19,7 @@
 }
 .App-body {
   box-sizing: border-box;
-  padding: 20px;
+  /* padding: 20px; */
   height: 100%;
   width: 100%;
 }
@@ -54,7 +54,7 @@ input[type="number"]:focus {
 }
 
 button {
-  border: none;
+  /* border: none;
   border-radius: 4px;
   padding: 8px 16px;
   font-size: 18px;
@@ -67,7 +67,7 @@ button {
   text-decoration: none;
   background: #cc7a6f;
   color: #fafafa;
-  margin-top: 1rem;
+  margin-top: 1rem; */
 }
 
 button[disabled] {

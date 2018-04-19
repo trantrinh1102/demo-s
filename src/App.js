@@ -5,6 +5,7 @@ import Loadable from 'react-loadable';
 import Loading from './my-loading-component';
 import 'styles/App.css';
 import Header from 'components/Header';
+import indexTitle from 'components/styled-component-demo/index';
 import PrivateRoute from 'helpers/route/PrivateRoute';
 import ShowCheckbox from 'containers/showCheckbox';
 
@@ -43,6 +44,7 @@ const Routing = () => (
     <Route path="/login" component={LoadableLogin} />
     <Route path="/signup" component={LoadableSignup} />
     <Route path="/show-checkbox" component={ShowCheckbox} />
+    <Route path="/styled" component={indexTitle} />
     <PrivateRoute path="/widgets" components={LoadableWidgets} />
     <Redirect to="/" />
   </Switch>

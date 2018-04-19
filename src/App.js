@@ -8,7 +8,7 @@ import Header from 'components/Header';
 import indexTitle from 'components/styled-component-demo/index';
 import PrivateRoute from 'helpers/route/PrivateRoute';
 import ShowCheckbox from 'containers/showCheckbox';
-import Tabs from 'components/tabsStyled/Tabs';
+import Tabs from 'components/tabsStyled';
 
 const LoadableLogin = Loadable({
   loader: () => import('containers/login'),

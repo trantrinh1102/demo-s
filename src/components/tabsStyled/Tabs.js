@@ -1,10 +1,42 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import withRipple from './withRipple';
+// import withRipple from './withRipple';
 
 const TabContent = styled.div`
   flex: 1;
+  width: 100%;
+`;
+
+const TabsWrapper = styled.div`
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+`;
+
+const TabButton = styled.button`
+  flex: 1;
+  height: 50px;
+  padding: 0px 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  /* cursor: default; */
+  background: transparent;
+  outline: none;
+  transition: border-color 0.2s ease-in;
+  border: none;
+  border-bottom: 4px solid ${props => props.selected ? '#6D6D6D' : '#D8D8D8'};
+
+  &:hover, &:focus, &:active {
+    border-bottom: 1px solid ${props => props.selected ? '#6D6D6D' : '#D8D8D8'};
+  }
+`;
+
+const TabList = styled.div`
+  display: flex;
+  flex-direction: row;
   width: 100%;
 `;
 
@@ -16,6 +48,12 @@ TabPanel.propTypes = {
   children: PropTypes.any.isRequired,
 };
 
+const Content = styled.div`
+  flex: 1;
+  width: 100%;
+  padding-top: 16px;
+`;
+
 class Tabs extends Component {
   static Panel = TabPanel;
 
@@ -25,7 +63,7 @@ class Tabs extends Component {
   };
 
   static defaultProps = {
-    tabBreak: '768px',
+    // tabBreak: '768px',
   };
 
   state = {
@@ -37,12 +75,12 @@ class Tabs extends Component {
   };
 
   render() {
-    const { children, tabBreak } = this.props;
+    const { children } = this.props;
     const { selectedTab } = this.state;
 
     return (
       <TabsWrapper>
-        <TabList breakPoint={tabBreak} role='tablist'>
+        <TabList role='tablist'>
           {React.Children.map(children, ({ props: { label } }, index) =>
             <TabButton
               role='tab'
@@ -64,49 +102,5 @@ class Tabs extends Component {
     );
   }
 }
-
-const TabsWrapper = styled.div`
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-`;
-
-const TabButton = withRipple(styled.button`
-  flex: 1;
-  height: 50px;
-  padding: 0px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 16px;
-  cursor: default;
-  background: transparent;
-  outline: none;
-  transition: border-color 0.2s ease-in;
-  border: none;
-  border-bottom: 4px solid ${props => props.selected ? 'blue' : '#fff'};
-  &:hover, &:focus, &:active {
-    border-bottom: 4px solid ${props => props.selected ? 'blue' : '#eee'};
-  }
-`);
-
-const TabList = styled.div`
-  display: flex;
-  flex-direction: row;
-  width: 100%;
-  @media (max-width: ${props => props.breakPoint}) {
-    flex-direction: column;
-    & > div,
-    & > div > button {
-      width: 100%;
-    }
-  }
-`;
-
-const Content = styled.div`
-  flex: 1;
-  width: 100%;
-  padding-top: 16px;
-`;
 
 export default Tabs;

@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-// import withRipple from './withRipple';
 
 const TabContent = styled.div`
   flex: 1;
@@ -82,7 +81,6 @@ class Tabs extends Component {
             </TabButton>
           )}
         </TabList>
-
         <Content>
           {React.Children.map(children, (comp, index) =>
             selectedTab === index ? comp : undefined

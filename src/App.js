@@ -9,6 +9,8 @@ import indexTitle from 'components/styled-component-demo/index';
 import PrivateRoute from 'helpers/route/PrivateRoute';
 import ShowCheckbox from 'containers/showCheckbox';
 import Tabs from 'components/tabsStyled';
+import blend from 'components/react-bootstrap/CapsuleInfo';
+import member from 'components/tabsStyled/member';
 
 const LoadableLogin = Loadable({
   loader: () => import('containers/login'),
@@ -47,7 +49,10 @@ const Routing = () => (
     <Route path="/show-checkbox" component={ShowCheckbox} />
     <Route path="/styled" component={indexTitle} />
     <Route path="/tab" component={Tabs} />
+    <Route path="/blend" component={blend} />
+    <Route path="/member" component={member} />
     <PrivateRoute path="/widgets" components={LoadableWidgets} />
+
     <Redirect to="/" />
   </Switch>
 );

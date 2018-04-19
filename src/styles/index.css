@@ -1,5 +1,43 @@
-body {
+/* body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
 }
+
+.searchTabs{
+  flex: 1;
+  width: 100%;
+}
+
+.searchTabs ul{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+	float: right;
+	border: solid 2px #ebecee;
+	border-radius: 25px;
+	overflow: hidden;
+}
+.searchTabs ul li{
+	float: left;
+}
+.searchTabs ul li a{
+	padding: 10px 20px;
+    display: block;
+    color: #b4b4b4;
+    text-decoration: none;
+    border-right: solid 2px #ebecee;
+    font-size: 12px;
+    font-weight: 400;
+    transition: all ease-out 0.3s 0s;
+}
+.searchTabs ul li a:hover{
+	background: #f9f7f7;
+}
+.searchTabs ul li:last-child a{
+	border-right: none;
+}
+.searchTabs ul li a.active{
+	background: #7f7f7f;
+	color: #fff;
+} */

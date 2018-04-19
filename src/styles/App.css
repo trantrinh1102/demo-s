@@ -1,4 +1,4 @@
-.App {
+/* .App {
   text-align: center;
 }
 
@@ -19,21 +19,20 @@
 }
 .App-body {
   box-sizing: border-box;
-  /* padding: 20px; */
   height: 100%;
   width: 100%;
-}
+} */
 
-@keyframes App-logo-spin {
+/* @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
-}
+} */
 
 * {
   box-sizing: border-box;
 }
 
-input[type="text"],
+/* input[type="text"],
 input[type="email"],
 input[type="password"],
 input[type="number"] {
@@ -51,9 +50,9 @@ input[type="email"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus {
   outline: none;
-}
+} */
 
-button {
+/* button {
   /* border: none;
   border-radius: 4px;
   padding: 8px 16px;
@@ -68,9 +67,9 @@ button {
   background: #cc7a6f;
   color: #fafafa;
   margin-top: 1rem; */
-}
+/* } */
 
-button[disabled] {
+/* button[disabled] {
   opacity: 0.6;
 }
 
@@ -164,4 +163,155 @@ table td {
 
 table tr:hover td {
 	background: #f2f2f2;
+} */
+
+/* css for freelancer */
+.hasShadow{
+	box-shadow: 0 0 10px #eae8e8;
+}
+
+.rightBtns{
+	width: 150px;
+    float: left;
+    padding: 23px 0;
+}
+
+.rightBtns a{
+	margin-left: 10px;
+	margin-right: 0;
+	position: relative;
+	top: 2px;
+}
+/* 794 */
+
+a.rounded{
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	border: solid 1px #ccc;
+	border-radius: 50%;
+	margin-right: 20px;
+	transition: all ease-out 0.3s 0s;
+	text-align: center;
+	line-height: 40px;
+	color: #ccc;
+}
+a.rounded i{
+
+}
+a.rounded:hover{
+	color: #4a8ce9;
+	border-color: #4a8ce9;
+}
+
+/* 824 */
+
+.userCon{
+	overflow: auto;
+}
+.userCon .imgCon{
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	overflow: hidden;
+	float: left;
+}
+.userCon .imgCon img{
+	width: 100%;
+}
+.userCon .userText{
+	float: left;
+	padding-left: 15px;
+}
+.userCon .userText h3{
+	margin-top: 4px;
+	font-size: 14px;
+	color: #808080;
+	font-weight: 400;
+}
+.userCon .userText h5{
+	font-size: 13px;
+	color: #b3b3b3;
+	font-weight: 400;
+}
+
+
+
+/* 1596 */
+.tagsList{
+	list-style: none;
+	padding: 0;
+	margin: 0;
+}
+.tagsList li{
+	background: #fff;
+	overflow: auto;
+	background: #fff;
+	border-bottom: solid 2px #f9f7f7;
+	transition: all ease-out 0.3s 0s;
+}
+.tagsList li:hover{
+	background: #f9f7f7;
+}
+.leftColorBox{
+	width: 70px;
+	text-align: center;
+	float: left;
+	min-height: 4px;
+	padding: 31px 0;
+}
+.tagsList li .leftColorBox span{
+	display: inline-block;
+	width: 20px;
+	height: 20px;
+	border-radius: 50%;
+	border: solid 2px red;
+}
+
+/* 1630 */
+.rightContentBox{
+	width: calc(100% - 220px);
+	float: left;
+}
+.rightContentBox h4{
+	font-size: 13px;
+	color: #808080;
+	margin-top: 25px;
+}
+.rightContentBox h5{
+	color: #B3B3B3;
+	font-weight: 400;
+	font-size: 12px;
+	margin-bottom: 25px;
+}
+
+/* 1794 */
+
+/* .groupList .userCon .userText h5{
+	margin-bottom: 0;
+} */
+
+.collegeMembers .userCon .userText h5{
+	font-size: 12px;
+}
+
+.groupList .rightBtns{
+	width: 195px;
+	padding-right: 20px;
+	text-align: right;
+}
+.groupList .rightBtns button:first-child{
+	margin-left: 0;
+}
+.groupList .rightContentBox{
+	width: calc(100% - 195px);
+	padding: 18px 0;
+	padding-left: 20px;
+}
+.groupList .userCon .userText h5{
+	margin-bottom: 0;
+}
+
+.rightBar{
+	padding: 20px 0;
 }

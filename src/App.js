@@ -8,6 +8,7 @@ import Header from 'components/Header';
 import indexTitle from 'components/styled-component-demo/index';
 import PrivateRoute from 'helpers/route/PrivateRoute';
 import ShowCheckbox from 'containers/showCheckbox';
+import Tabs from 'components/tabsStyled/Tabs';
 
 const LoadableLogin = Loadable({
   loader: () => import('containers/login'),
@@ -45,6 +46,7 @@ const Routing = () => (
     <Route path="/signup" component={LoadableSignup} />
     <Route path="/show-checkbox" component={ShowCheckbox} />
     <Route path="/styled" component={indexTitle} />
+    <Route path="/tab" component={Tabs} />
     <PrivateRoute path="/widgets" components={LoadableWidgets} />
     <Redirect to="/" />
   </Switch>

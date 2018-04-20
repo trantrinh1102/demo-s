@@ -20,8 +20,8 @@ export default class MemberCard extends React.Component {
           </div>
         </div>
         <div className="rightBtns">
-          <a href="" className="rounded">
-            <i className="fa fa-ellipsis-h" />
+          <a href="">
+            <span className="fa fa-angle-down" />
           </a>
         </div>
       </li>
